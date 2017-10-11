@@ -35,6 +35,8 @@ class AudioManagerAndroid {
   private AudioManagerAndroid(Context context) {
     AudioManager audioManager = (AudioManager)
         context.getSystemService(Context.AUDIO_SERVICE);
+    audioManager.setMode(AudioManager.MODE_IN_CALL);
+    audioManager.setSpeakerphoneOn(true);
 
     mNativeOutputSampleRate = DEFAULT_SAMPLING_RATE;
     mAudioLowLatencyOutputFrameSize = DEFAULT_FRAMES_PER_BUFFER;
